@@ -1,0 +1,50 @@
+.nav-icon {
+    width: 3em;
+    height: 3em;
+}
+
+span.home-icon {
+    margin-top: 9px;
+    font-size: 1.8em;
+}
+
+a.home-icon {
+    height: 50px;
+}
+
+/* Override bootstrap styles */
+.navbar-nav > li > a {
+    padding: 0;
+}
+
+.nav > li > a {
+    padding: 0 15px 8px 15px;
+}
+
+.logo {
+    opacity: 0.75;
+}
+
+.data-loading {
+  position: fixed;
+  height: 2em;
+  width: 2em;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.icon-color {
+  color:#428bca
+}
+
+.thumbnail {
+	width: 100px;
+	hewight: 100px
+}
+
+.clickable-icon {
+	cursor: pointer;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SpringBootAwsDemo">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- libraries -->
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/angular-route.min.js"></script>
+    <script src="lib/js/dirPagination.js"></script>
+    <script src="lib/js/moment.min.js"></script>    
+    <script src="lib/js/underscore.js"></script>    
+    <script src="app.js"></script>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/font-awesome-4.5.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="app.css">
+</head>
+<body role="document">
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home">Spring Boot AWS Demo</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">                
+                <li active><a href="#/create-customer" data-toggle="tooltip" data-placement="top" title="Create New Customer"><i class="fa fa-user-plus fa-3x icon-color"></i></a></li>                     
+                <li active><a href="#/view-all-customers" data-toggle="tooltip" data-placement="top" title="View All Customers"><i class="fa fa-search-plus fa-3x icon-color"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container" role="main" ng-view>
+</div>
+
+</body>
+</html>

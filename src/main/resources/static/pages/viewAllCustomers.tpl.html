@@ -1,0 +1,47 @@
+<div ng-controller="ViewAllCustomersCtrl as viewAllCustomersCtrl">
+	<div class="data-loading" ng-show="dataLoading">
+ 		<i class="fa fa-refresh fa-spin fa-5x "></i>	
+ 	</div>
+
+	<div class="row" ng-hide="dataLoading">				
+		<div class="col-md-12">
+			<label>Search: <input class="form-control" ng-model="searchText"></label>
+		</div>
+	</div>
+	
+	<div class="row" ng-hide="dataLoading">				
+		<div class="col-md-12">
+		
+	 	<table class="table table-striped">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Date Of Birth</th>
+				<th>Photo</th>
+				<th></th>
+				<th></th>
+			</tr>		
+			
+			<tr dir-paginate="customer in customers | filter:searchFilter | itemsPerPage: 5">
+			    <td>{{ customer.firstName }}</td>
+			    <td>{{ customer.lastName }}</td>
+				<td>{{ customer.dateOfBirth | formatDate }}</td>
+				<td>
+					<a href="{{ customer.customerImage.url }}">
+						<img src="{{ customer.customerImage.url }}" alt="{{ customer.firstName }}" 
+							 style="height:50px; width:50px">
+					</a>
+				</td>
+				<td>
+					<a href="#/view-customer/{{ customer.id }}" data-toggle="tooltip" data-placement="top" title="View Customer Details"><i class="fa fa-search-plus fa-2x icon-color"></i></a>				
+				</td>
+				<td>					
+					<i id="customer.id" ng-click="viewAllCustomersCtrl.add(customer.id)" class="fa fa-times fa-2x icon-color clickable-icon" ng-hide="customerDelete && customer.id === selectedCustomer" data-toggle="tooltip" data-placement="top" title="Delete Customer"></i>									
+					<i class="fa fa-refresh fa-spin fa-2x icon-color" ng-show="customerDelete && customer.id === selectedCustomer"></i>
+				</td>
+			</tr>
+		</table>
+		<dir-pagination-controls></dir-pagination-controls>
+	</div>
+	</div>	
+</div>

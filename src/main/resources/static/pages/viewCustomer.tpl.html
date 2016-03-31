@@ -1,0 +1,84 @@
+<div ng-controller="ViewCustomerCtrl as viewCustomer">
+	<div class="data-loading" ng-show="dataLoading">
+ 		<i class="fa fa-refresh fa-spin fa-5x "></i>	
+ 	</div>
+
+	<div class="panel panel-primary" ng-hide="dataLoading">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">View Customer</h3>
+	    </div>
+	    <div class="panel-body">
+	        <form class="form-horizontal" role="form" name="personForm">
+	            
+	            <div class="row">					
+					  <div class="col-md-6">
+					
+						<div class="form-group">                
+			                <label for="firstName" class="col-sm-3 control-label">First name</label>		                
+			                <div class="col-sm-9" style="padding-top: 7px">
+			                	{{ customer.firstName }}    
+			                </div>
+			            </div>	  
+					  	
+					  	<div class="form-group">
+			                <label for="lastName" class="col-sm-3 control-label">Last name</label>
+			                <div class="col-sm-9" style="padding-top: 7px">
+			                	{{ customer.lastName }}    
+			                </div>
+			            </div>
+						
+						<div class="form-group">
+			                <label for="dateOfBirth" class="col-sm-3 control-label">Date of Birth</label>
+			                <div class="col-sm-9" style="padding-top: 7px">
+			                	{{ customer.dateOfBirth | formatDate }}    
+			                </div>
+			            </div>	  
+						
+						<div class="form-group">
+			                <label for="image" class="col-sm-3 control-label">Photo</label>
+			                <div class="col-sm-9" style="padding-top: 7px">
+			                	<a href="{{ customer.customerImage.url }}" class="thumbnail">
+							      <img src="{{ customer.customerImage.url }}" alt="{{ customer.firstName }}">
+							    </a>  
+			                </div>		                
+			            </div>	  
+					  
+					  </div>
+					  
+					  <div class="col-md-6">
+	
+						<div class="form-group">
+			                <label for="street" class="col-sm-3 control-label">Street</label>		
+			                <div class="col-sm-9" style="padding-top: 7px">
+			                	{{ customer.address.street }}    
+			                </div>
+			            </div>
+			            
+			            <div class="form-group">
+			                <label for="town" class="col-sm-3 control-label">Town</label>
+			                <div class="col-sm-9" style="padding-top: 7px">
+			                	{{ customer.address.town }}    
+			                </div>
+			            </div>
+			            
+			            <div class="form-group">
+			                <label for="county" class="col-sm-3 control-label">County</label>
+			                <div class="col-sm-9" style="padding-top: 7px">
+			                	{{ customer.address.county }}    
+			                </div>
+			            </div>
+			            
+			            <div class="form-group">
+			                <label for="postcode" class="col-sm-3 control-label">Postcode</label>
+			                <div class="col-sm-9" style="padding-top: 7px">
+			                	{{ customer.address.postcode }}    
+			                </div>
+			            </div>
+			            				  
+					  </div>
+					</div>      
+	        </form>
+	        
+	    </div>
+	</div>
+</div>

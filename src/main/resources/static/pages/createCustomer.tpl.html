@@ -1,0 +1,85 @@
+<div class="panel panel-primary" ng-controller="CreateCustomerCtrl as createCustomerCtrl">
+    <div class="panel-heading">
+        <h3 class="panel-title">Create Customer</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" name="customerForm">     
+            <div class="row">				
+				  <div class="col-md-6">
+				
+					<div class="form-group">                
+		                <label for="firstName" class="col-sm-3 control-label">First name</label>
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="firstName" placeholder="First name..."
+		                           ng-model="createCustomerCtrl.model.firstName" required>
+		                </div>
+		            </div>	  
+				  	
+				  	<div class="form-group">
+		                <label for="lastName" class="col-sm-3 control-label">Last name</label>
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="lastName" placeholder="Last name..."
+		                           ng-model="createCustomerCtrl.model.lastName" required>
+		                </div>
+		            </div>
+					
+					<div class="form-group">
+		                <label for="dateOfBirth" class="col-sm-3 control-label">Date of Birth</label>
+		                <div class="col-sm-9">
+		                    <input type="date" class="form-control" id="lastName" placeholder="Dat eof Birth..."
+		                           ng-model="createCustomerCtrl.model.dateOfBirth" required>
+		                </div>
+		            </div>	  
+					
+					<div class="form-group">
+		                <label for="image" class="col-sm-3 control-label">Image</label>
+		                <div class="col-sm-9">
+		                    <input type="file" class="form-control" id="image" placeholder="Image..."
+		                           file-model="createCustomerCtrl.model.image" required>
+		                </div>
+		            </div>	  				  
+				  </div>
+				  
+				  <div class="col-md-6">
+					<div class="form-group">
+		                <label for="street" class="col-sm-3 control-label">Street</label>		
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="street" placeholder="Street..."
+		                           ng-model="createCustomerCtrl.model.address.street" required>
+		                </div>
+		            </div>
+		            
+		            <div class="form-group">
+		                <label for="town" class="col-sm-3 control-label">Town</label>
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="town" placeholder="Town..."
+		                           ng-model="createCustomerCtrl.model.address.town" required>
+		                </div>
+		            </div>
+		            
+		            <div class="form-group">
+		                <label for="county" class="col-sm-3 control-label">County</label>
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="county" placeholder="County..."
+		                           ng-model="createCustomerCtrl.model.address.county" required>
+		                </div>
+		            </div>
+		            
+		            <div class="form-group">
+		                <label for="postcode" class="col-sm-3 control-label">Postcode</label>
+		                <div class="col-sm-9">
+		                    <input type="text" class="form-control" id="lastName" placeholder="Postcode..."
+		                           ng-model="createCustomerCtrl.model.address.postcode" required>
+		                </div>
+		            </div>
+		            
+		            <div class="form-group">
+		                <div class="col-sm-offset-10 col-sm-12">		                
+		                	<button ng-click="createCustomerCtrl.add()" class="btn btn-primary" ng-disabled="saving"><i ng-show="saving" class="fa fa-refresh fa-spin fa-1x"></i> Save</button>	                    
+		                </div>
+		            </div>	  				  
+				  </div>			
+				</div>      
+        </form>
+    </div>
+</div>
