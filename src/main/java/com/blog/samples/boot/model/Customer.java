@@ -1,4 +1,4 @@
-package com.blog.samples.boot.rest.model;
+package com.blog.samples.boot.model;
 
 import java.util.Date;
 
@@ -26,7 +26,6 @@ public class Customer{
 		this.customerImage = customerImage;
 		this.address = address;
 	}
-
 
 	@Id
 	@Getter

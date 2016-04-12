@@ -1,4 +1,4 @@
-package com.blog.samples.boot.rest.controller;
+package com.blog.smaples.boot.config;
 
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.context.annotation.Bean;
