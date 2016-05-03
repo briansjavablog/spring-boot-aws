@@ -1,4 +1,4 @@
-package com.blog.samples.boot.rest.controller;
+package com.blog.samples.boot.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -16,21 +16,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.blog.samples.boot.rest.exception.CustomerNotFoundException;
-import com.blog.samples.boot.rest.exception.InvalidCustomerRequestException;
-import com.blog.samples.boot.rest.model.Address;
-import com.blog.samples.boot.rest.model.Customer;
-import com.blog.samples.boot.rest.model.CustomerImage;
-import com.blog.samples.boot.rest.repository.CustomerRepository;
+import com.blog.samples.boot.exception.CustomerNotFoundException;
+import com.blog.samples.boot.exception.InvalidCustomerRequestException;
+import com.blog.samples.boot.model.Address;
+import com.blog.samples.boot.model.Customer;
+import com.blog.samples.boot.model.CustomerImage;
+import com.blog.samples.boot.repository.CustomerRepository;
 import com.blog.samples.boot.service.FileArchiveService;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Customer Controller exposes a series of RESTful endpoints
  */
 @RestController
-@Slf4j
 public class CustomerController {
 
 	@Autowired
@@ -51,21 +48,13 @@ public class CustomerController {
             @RequestParam(value="postcode", required=true) String postcode,
             @RequestParam(value="image", required=true) MultipartFile image) {
         
-        try {
-        	
         	CustomerImage customerImage = fileArchiveService.saveFileToS3(image);        	
         	Customer customer = new Customer(firstName, lastName, dateOfBirth, customerImage, 
         										new Address(street, town, county, postcode));
         	
         	customerRepository.save(customer);
-            return customer;
-            
-        } catch (Exception ex) {
-            log.error("Error occurred creating customer", ex);
-            throw new RuntimeException(ex);
-        }      
+            return customer;               
     }
-	
 	
 	/**
 	 * Get customer using id. Returns HTTP 404 if customer not found
@@ -89,7 +78,6 @@ public class CustomerController {
 		
 		return customer;
 	}
-
 	
 	/**
 	 * Gets all customers.
@@ -101,7 +89,6 @@ public class CustomerController {
 		
 		return (List<Customer>) customerRepository.findAll();
 	}
-	
 	
 	/**
 	 * Deletes the customer with given customer id if it exists and returns HTTP204.

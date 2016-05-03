@@ -36,7 +36,7 @@
 					<a href="#/view-customer/{{ customer.id }}" data-toggle="tooltip" data-placement="top" title="View Customer Details"><i class="fa fa-search-plus fa-2x icon-color"></i></a>				
 				</td>
 				<td>					
-					<i id="customer.id" ng-click="viewAllCustomersCtrl.add(customer.id)" class="fa fa-times fa-2x icon-color clickable-icon" ng-hide="customerDelete && customer.id === selectedCustomer" data-toggle="tooltip" data-placement="top" title="Delete Customer"></i>									
+					<i id="customer.id" ng-click="viewAllCustomersCtrl.delete(customer.id)" class="fa fa-times fa-2x icon-color clickable-icon" ng-hide="customerDelete && customer.id === selectedCustomer" data-toggle="tooltip" data-placement="top" title="Delete Customer"></i>									
 					<i class="fa fa-refresh fa-spin fa-2x icon-color" ng-show="customerDelete && customer.id === selectedCustomer"></i>
 				</td>
 			</tr>
