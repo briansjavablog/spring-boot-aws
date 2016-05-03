@@ -1,4 +1,4 @@
-package com.blog.samples.boot.rest.model;
+package com.blog.samples.boot.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

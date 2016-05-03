@@ -98,7 +98,7 @@
         	$scope.dataLoading = false;
         });        
         
-        self.add = function (customerId) {
+        self.delete = function (customerId) {
         	$scope.selectedCustomer = customerId;
         	$scope.customerDelete = true;
         	$http.delete('/spring-boot-aws/customers/' + customerId).then(function onSucces(response) {

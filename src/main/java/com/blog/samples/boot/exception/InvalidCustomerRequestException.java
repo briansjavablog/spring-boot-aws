@@ -1,4 +1,4 @@
-package com.blog.samples.boot.rest.exception;
+package com.blog.samples.boot.exception;
 
 public class InvalidCustomerRequestException extends RuntimeException {
 
