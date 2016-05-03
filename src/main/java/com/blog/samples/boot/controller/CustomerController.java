@@ -24,13 +24,10 @@ import com.blog.samples.boot.model.CustomerImage;
 import com.blog.samples.boot.repository.CustomerRepository;
 import com.blog.samples.boot.service.FileArchiveService;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Customer Controller exposes a series of RESTful endpoints
  */
 @RestController
-@Slf4j
 public class CustomerController {
 
 	@Autowired
@@ -59,7 +56,6 @@ public class CustomerController {
             return customer;               
     }
 	
-	
 	/**
 	 * Get customer using id. Returns HTTP 404 if customer not found
 	 * 
@@ -82,7 +78,6 @@ public class CustomerController {
 		
 		return customer;
 	}
-
 	
 	/**
 	 * Gets all customers.
@@ -94,7 +89,6 @@ public class CustomerController {
 		
 		return (List<Customer>) customerRepository.findAll();
 	}
-	
 	
 	/**
 	 * Deletes the customer with given customer id if it exists and returns HTTP204.

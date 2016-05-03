@@ -15,7 +15,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.blog.samples.boot.exception.FileArchiveSuerviceException;
+import com.blog.samples.boot.exception.FileArchiveServiceException;
 import com.blog.samples.boot.model.CustomerImage;
 
 @Service
@@ -34,7 +34,7 @@ public class FileArchiveService {
 	 * @return
 	 * @throws IOException
 	 */
-	public CustomerImage saveFileToS3(MultipartFile multipartFile) throws FileArchiveSuerviceException {
+	public CustomerImage saveFileToS3(MultipartFile multipartFile) throws FileArchiveServiceException {
 
 		try{
 			File fileToUpload = convertFromMultiPart(multipartFile);
@@ -53,10 +53,9 @@ public class FileArchiveService {
 			return new CustomerImage(key, signedUrl.toString());
 		}
 		catch(Exception ex){			
-			throw new FileArchiveSuerviceException("An error occurred saving file to S3", ex);
+			throw new FileArchiveServiceException("An error occurred saving file to S3", ex);
 		}		
 	}
-
 
 	/**
 	 * Delete image from S3 using specified key
@@ -66,7 +65,6 @@ public class FileArchiveService {
 	public void deleteImageFromS3(CustomerImage customerImage){
 		s3Client.deleteObject(new DeleteObjectRequest(S3_BUCKET_NAME, customerImage.getKey()));	
 	}
-
 
 	/**
 	 * Convert MultiPartFile to ordinary File
