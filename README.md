@@ -1,4 +1,7 @@
 # spring-boot-aws
+
+[![Build Status](https://drone.io/github.com/briansjavablog/spring-boot-aws/status.png)](https://drone.io/github.com/briansjavablog/spring-boot-aws/latest)
+
 Demo app is built with Spring Boot and Angular and uses AWS EC2, MySQL RDS and S3 Storage. Some screenshots below.
 
 ![access_app_on_ec2](https://cloud.githubusercontent.com/assets/2404172/14990684/9dee567e-1155-11e6-8b98-46bc3760edfc.png)
