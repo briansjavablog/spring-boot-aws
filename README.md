@@ -15,3 +15,4 @@ Demo app is built with Spring Boot and Angular and uses AWS EC2, MySQL RDS and S
 
 ![image](https://cloud.githubusercontent.com/assets/2404172/14990857/93040d02-1156-11e6-83ba-afeb42b8f74f.png)
 
+Blog post that uses this code can be found at https://www.briansdevblog.com/2016/05/spring-boot-amazon-web-services-ec2-rds-s3/
